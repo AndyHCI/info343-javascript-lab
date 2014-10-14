@@ -8,7 +8,9 @@
 */ 
 
 function addition() {
-	// your code goes here!
+	var input1 = parseFloat(document.getElementById('additionInput1').value);
+	var input2 = parseFloat(document.getElementById('additionInput2').value);
+	alert('The sum is ' + (input1 + input2));
 }
 
 /* --------------------------------------------------------- */
@@ -27,8 +29,24 @@ function addition() {
 	note the lack of plurality on the word vowel.
 */ 
 
+
 function vowelCounter() {
-	// your code goes here!
+	var sentence = document.getElementById('vowelInput').value;
+	var chars = sentence.split('');
+	var count = 0;
+	for (var i = 0; i < chars.length; i++) {
+		if (chars[i] == 'a' || 'e' || 'i' || 'o' || 'u') {
+			count++;
+		}
+	}
+
+	if (count == 1) {
+		alert('That sentence has ' + count + ' vowel in it.');
+	} else {
+		alert('That sentence has ' + count + ' vowels in it.');
+	}
+
+
 }
 
 /* --------------------------------------------------------- */
@@ -59,11 +77,14 @@ function vowelCounter() {
 */ 
 
 function submit() {
-	
+	var guess = document.getElementById('numberGuess').value;
+	if (guess = randomNum) {
+		
+	}
 }
 
 function reset() {
-
+	var randomNum = Math.floor((Math.random() * 100) + 1);
 }
 
 

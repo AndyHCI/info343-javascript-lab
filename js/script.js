@@ -32,10 +32,11 @@ function addition() {
 
 function vowelCounter() {
 	var sentence = document.getElementById('vowelInput').value;
+	var vowels = ['a', 'e', 'i', 'o', 'u'];
 	var chars = sentence.split('');
 	var count = 0;
 	for (var i = 0; i < chars.length; i++) {
-		if (chars[i] == 'a' || 'e' || 'i' || 'o' || 'u') {
+		if (vowels.indexOf(chars[i]) != -1) {
 			count++;
 		}
 	}
@@ -75,16 +76,26 @@ function vowelCounter() {
 
 	For extra functionality, track the number of guesses the user has made, and print that as part of the result.
 */ 
+var randomNum = Math.floor((Math.random() * 100) + 1);
+var guessCount = 0;
 
 function submit() {
 	var guess = document.getElementById('numberGuess').value;
-	if (guess = randomNum) {
-		
+	var result = document.getElementById('numberResult');
+	if (guess < randomNum) {
+		guessCount++;
+		result.innerHTML = 'Higher ' + '| Guess Count: ' + guessCount;
+	} else if (guess > randomNum) {
+		guessCount++;
+		result.innerHTML = 'Lower ' + '| Guess Count: ' + guessCount;
+	} else {
+		guessCount++;
+		result.innerHTML = 'You won! ' + '| Guess Count: ' + guessCount;
 	}
 }
 
 function reset() {
-	var randomNum = Math.floor((Math.random() * 100) + 1);
+	randomNum = Math.floor((Math.random() * 100) + 1);
 }
 
 
